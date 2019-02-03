@@ -1,7 +1,9 @@
 // @flow
 
-import type {Styles} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import React from 'react';
+import type {StyleObj} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
-declare type StyleSet = number | Styles | Array<StyleSet>;
+declare type StyleSet = StyleObj | Object | Array<StyleObj | Object>;
 
-declare type ObjectOf<T> = {[string]: T};
+declare type ReactNode = React.Node;
+declare type ReactEl = React.Element<*>;

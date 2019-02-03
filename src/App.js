@@ -1,13 +1,17 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+// @flow
 
-export default class App extends React.Component {
+import React, {Component} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {WHITE} from './constants/color';
+import MainRoute from './routes/MainRoute';
+
+type Props = {};
+
+export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <MainRoute />
       </View>
     );
   }
@@ -16,8 +20,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: WHITE,
+    flexDirection: 'row',
+    height: '100%',
   },
 });
