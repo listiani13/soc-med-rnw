@@ -1,8 +1,8 @@
 // @flow
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import UserList from '../features/screens/UserListScene';
-import UserDetail from '../features/screens/UserDetailScene';
+import UserList from '../features/user/screens/UserListScene';
+import UserDetail from '../features/user/screens/UserProfileScene';
 
 export default class MainRoute extends Component<{}> {
   render() {
