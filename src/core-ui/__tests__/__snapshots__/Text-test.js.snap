@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component should render bold large text 1`] = `
+<div>
+  <div
+    class="rn-borderTopWidth-13yce4e rn-borderRightWidth-fnigne rn-borderBottomWidth-ndvcnb rn-borderLeftWidth-gxnn5r rn-boxSizing-deolkf rn-display-1471scf rn-fontFamily-14xgk7a rn-fontStyle-o11vmf rn-fontVariant-ebii48 rn-lineHeight-t9a87b rn-marginTop-1mnahxq rn-marginRight-61z16t rn-marginBottom-p1pxzi rn-marginLeft-11wrixw rn-paddingTop-wk8lta rn-paddingRight-9aemit rn-paddingBottom-1mdbw0j rn-paddingLeft-gy4na3 rn-textDecoration-bauka4 rn-whiteSpace-q42fyq rn-wordWrap-qvutc0"
+    dir="auto"
+    style="font-size: 28px; font-weight: 500;"
+  >
+    Hello
+  </div>
+</div>
+`;
+
+exports[`Text component should render small text 1`] = `
+<div>
+  <div
+    class="rn-borderTopWidth-13yce4e rn-borderRightWidth-fnigne rn-borderBottomWidth-ndvcnb rn-borderLeftWidth-gxnn5r rn-boxSizing-deolkf rn-display-1471scf rn-fontFamily-14xgk7a rn-fontStyle-o11vmf rn-fontVariant-ebii48 rn-lineHeight-t9a87b rn-marginTop-1mnahxq rn-marginRight-61z16t rn-marginBottom-p1pxzi rn-marginLeft-11wrixw rn-paddingTop-wk8lta rn-paddingRight-9aemit rn-paddingBottom-1mdbw0j rn-paddingLeft-gy4na3 rn-textDecoration-bauka4 rn-whiteSpace-q42fyq rn-wordWrap-qvutc0"
+    dir="auto"
+    style="font-size: 15px;"
+  >
+    Hello
+  </div>
+</div>
+`;
