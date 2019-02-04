@@ -1,13 +1,13 @@
 {
-  "main.css": "/social-media-dashboard/static/css/main.b0791c3e.chunk.css",
-  "main.js": "/social-media-dashboard/static/js/main.d6129c24.chunk.js",
-  "main.js.map": "/social-media-dashboard/static/js/main.d6129c24.chunk.js.map",
-  "static/js/1.a80408d3.chunk.js": "/social-media-dashboard/static/js/1.a80408d3.chunk.js",
-  "static/js/1.a80408d3.chunk.js.map": "/social-media-dashboard/static/js/1.a80408d3.chunk.js.map",
-  "runtime~main.js": "/social-media-dashboard/static/js/runtime~main.f3819348.js",
-  "runtime~main.js.map": "/social-media-dashboard/static/js/runtime~main.f3819348.js.map",
-  "static/css/main.b0791c3e.chunk.css.map": "/social-media-dashboard/static/css/main.b0791c3e.chunk.css.map",
-  "index.html": "/social-media-dashboard/index.html",
-  "precache-manifest.64d2256ccb72560209201df6f2e5e158.js": "/social-media-dashboard/precache-manifest.64d2256ccb72560209201df6f2e5e158.js",
-  "service-worker.js": "/social-media-dashboard/service-worker.js"
+  "main.css": "/soc-med-rnw/static/css/main.b0791c3e.chunk.css",
+  "main.js": "/soc-med-rnw/static/js/main.00d7d0eb.chunk.js",
+  "main.js.map": "/soc-med-rnw/static/js/main.00d7d0eb.chunk.js.map",
+  "static/js/1.a80408d3.chunk.js": "/soc-med-rnw/static/js/1.a80408d3.chunk.js",
+  "static/js/1.a80408d3.chunk.js.map": "/soc-med-rnw/static/js/1.a80408d3.chunk.js.map",
+  "runtime~main.js": "/soc-med-rnw/static/js/runtime~main.40090bf6.js",
+  "runtime~main.js.map": "/soc-med-rnw/static/js/runtime~main.40090bf6.js.map",
+  "static/css/main.b0791c3e.chunk.css.map": "/soc-med-rnw/static/css/main.b0791c3e.chunk.css.map",
+  "index.html": "/soc-med-rnw/index.html",
+  "precache-manifest.d699714be7f0e2e03feb98275e20da58.js": "/soc-med-rnw/precache-manifest.d699714be7f0e2e03feb98275e20da58.js",
+  "service-worker.js": "/soc-med-rnw/service-worker.js"
 }
