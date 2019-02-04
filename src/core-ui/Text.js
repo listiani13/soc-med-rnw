@@ -6,7 +6,7 @@ import {FONT_SIZE} from '../constants/text';
 import {BAHAMA_BLUE} from '../constants/color';
 
 type Props = {
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge',
+  size?: 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge',
   weight?: 'light' | 'reg' | 'bold' | 'black',
   primary?: boolean,
   color?: string,

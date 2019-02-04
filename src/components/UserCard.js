@@ -5,6 +5,8 @@ import {Avatar} from '@material-ui/core';
 import {Text} from '../core-ui';
 import {LIGHT_GREY} from '../constants/color';
 import getInitialName from '../helpers/getInitialName';
+import {AVATAR_SIZE} from '../constants/size';
+import {BORDER_RADIUS, BOX_SHADOW} from '../constants/layout';
 
 type Props = {|
   name: string,
@@ -12,12 +14,13 @@ type Props = {|
   phone: string,
   website: string,
   style?: StyleSet,
+  onClick?: () => void,
 |};
 
-export default function UserCard(params: Props) {
-  let {name, username, phone, website, style} = params;
+export default function UserCard(props: Props) {
+  let {name, username, phone, website, style, onClick} = props;
   return (
-    <TouchableOpacity style={[styles.root, style]}>
+    <TouchableOpacity style={[styles.root, style]} onPress={onClick}>
       <View style={styles.container}>
         <Avatar style={stylesMUI.avatar}>{getInitialName(name)}</Avatar>
         <Text
@@ -43,9 +46,9 @@ const styles = StyleSheet.create({
   root: {
     width: 200,
     height: 250,
-    boxShadow: '6px 5px 16px -8px rgba(0,0,0,0.38)',
+    boxShadow: BOX_SHADOW,
     elevation: 3,
-    borderRadius: 4,
+    borderRadius: BORDER_RADIUS,
     borderWidth: 0.5,
     borderColor: LIGHT_GREY,
   },
@@ -63,13 +66,11 @@ const styles = StyleSheet.create({
   },
 });
 
+// NOTE: Since Material UI can't accept StyleSheet, i'm separating it from main styles
 const stylesMUI = {
-  card: {
-    flex: 1,
-  },
   avatar: {
-    width: 90,
-    height: 90,
+    width: AVATAR_SIZE,
+    height: AVATAR_SIZE,
     marginBottom: 10,
   },
 };

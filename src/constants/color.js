@@ -2,5 +2,8 @@
 const BAHAMA_BLUE = '#20417B';
 const WHITE = '#FFFFFF';
 const LIGHT_GREY = '#8E8E8E40';
+const GREY = '#CCCCCC';
+const MED_GREY = '#F1F1F1';
+const DARK_GREY = '#838383';
 
-export {BAHAMA_BLUE, WHITE, LIGHT_GREY};
+export {BAHAMA_BLUE, WHITE, LIGHT_GREY, GREY, MED_GREY, DARK_GREY};
