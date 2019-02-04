@@ -14,10 +14,11 @@
     "test-src": "react-scripts test --env=jsdom --coverage --testPathPattern __tests__"
   },
   "dependencies": {
-    "@material-ui/core": "^1.4.2",
+    "@material-ui/core": "^3.9.1",
     "react": "^16.7.0",
     "react-art": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-images": "^0.5.19",
     "react-native-web": "^0.10.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3"
