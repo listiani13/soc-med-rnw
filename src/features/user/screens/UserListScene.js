@@ -1,23 +1,48 @@
 // @flow
 import React, {Component} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import {Route} from 'react-router-dom';
+import {compose, graphql} from 'react-apollo';
 import {Text} from '../../../core-ui';
-import {USER_LIST} from '../../../data/users';
 import UserCard from '../../../components/UserCard';
+import {GET_USER_LIST} from '../../../graphql/queries/users';
+import {GREY} from '../../../constants/color';
 
-export default class UserList extends Component<{}> {
+type User = {
+  id: string,
+  name: string,
+  username: string,
+  website: string,
+  phone: string,
+};
+type Props = {
+  queryResult: {
+    data: Array<User>,
+    loading: boolean,
+  },
+};
+class UserListScene extends Component<Props> {
   render() {
     return (
       <Route>
         {({history}) => {
+          let {
+            queryResult: {loading, data},
+          } = this.props;
+          if (loading) {
+            return (
+              <View style={[styles.root, styles.loading]}>
+                <ActivityIndicator size={40} color={GREY} />
+              </View>
+            );
+          }
           return (
             <View style={styles.root}>
               <Text size="xlarge" style={styles.title}>
                 User List
               </Text>
               <View style={styles.content}>
-                {USER_LIST.map((user, index) => {
+                {data.map((user, index) => {
                   let {name, username, website, phone, id} = user;
                   return (
                     <UserCard
@@ -40,6 +65,11 @@ export default class UserList extends Component<{}> {
   }
 }
 
+export default compose(
+  graphql(GET_USER_LIST, {
+    props: ({data}) => ({queryResult: data}),
+  }),
+)(UserListScene);
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -56,5 +86,9 @@ const styles = StyleSheet.create({
   userCard: {
     marginHorizontal: 12,
     marginVertical: 10,
+  },
+  loading: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
