@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/soc-med-rnw/precache-manifest.d699714be7f0e2e03feb98275e20da58.js"
+  "/soc-med-rnw/precache-manifest.82b2283efda50b9d8de58730610384da.js"
 );
 
 workbox.clientsClaim();
