@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
-import {Route} from 'react-router';
+import {Route, Redirect} from 'react-router';
 import {TextField, Button, List} from '@material-ui/core';
 import {Text} from '../../../core-ui';
 import {USER_LIST} from '../../../data/users';
@@ -24,7 +24,12 @@ export default class UserDetailScene extends Component<{}> {
             params: {id},
           },
         }) => {
-          let {name, username} = USER_LIST[id - 1];
+          let index = id - 1;
+          // TODO: CHANGE THIS INTO REAL DATA
+          if (!USER_LIST[index]) {
+            return <Redirect to="/404" />;
+          }
+          let {name, username} = USER_LIST[index];
           return (
             <ScrollView contentContainerStyle={styles.root}>
               <DetailHeader name={name} username={username} />
