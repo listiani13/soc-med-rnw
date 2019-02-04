@@ -21,7 +21,8 @@ export default class UserList extends Component<{}> {
                 username={username}
                 website={website}
                 phone={phone}
-                style={{marginHorizontal: 12, marginVertical: 10}}
+                style={styles.userCard}
+                key={index}
               />
             );
           })}
@@ -43,5 +44,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
+  },
+  userCard: {
+    marginHorizontal: 12,
+    marginVertical: 10,
   },
 });
