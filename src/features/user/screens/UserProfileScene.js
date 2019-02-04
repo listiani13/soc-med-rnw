@@ -1,6 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
+import {Route} from 'react-router';
 import {TextField, Button, List} from '@material-ui/core';
 import {Text} from '../../../core-ui';
 import {USER_LIST} from '../../../data/users';
@@ -16,74 +17,78 @@ import AlbumItem from '../components/AlbumItem';
 
 export default class UserDetailScene extends Component<{}> {
   render() {
-    let {name, username} = USER_LIST[0];
-
     return (
-      <ScrollView contentContainerStyle={styles.root}>
-        <DetailHeader name={name} username={username} />
-        <View style={styles.separator} />
-        <View
-          style={{
-            flexDirection: 'row',
-          }}
-        >
-          <View style={{flex: 2}}>
-            <Text size="large">Albums</Text>
-            <List>
-              {ALBUMS.map((album, index) => {
-                let {title} = album;
-                return (
-                  <AlbumItem
-                    title={title}
-                    photos={PHOTOS.map((photo) => ({
-                      src: photo.url,
-                      thumbnail: photo.thumbnailUrl,
-                    }))}
-                    name={name}
-                  />
-                );
-              })}
-            </List>
-          </View>
-          <View style={styles.post}>
-            <Text size="large">Posts</Text>
-            <View style={styles.createNewPost}>
-              <TextField
-                label="Add post here"
-                multiline
-                rows="4"
-                placeholder="How are you today?"
-                style={stylesMUI.txtNewPost}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                style={stylesMUI.btnNewPost}
-              >
-                Post
-              </Button>
-            </View>
-            <View style={styles.postList}>
-              {POSTS.map((post, index) => {
-                let {title, body} = post;
-                return (
-                  <PostItem
-                    name={name}
-                    title={title}
-                    content={body}
-                    comments={COMMENTS}
-                    key={index}
-                  />
-                );
-              })}
-            </View>
-          </View>
-        </View>
-      </ScrollView>
+      <Route>
+        {({
+          match: {
+            params: {id},
+          },
+        }) => {
+          let {name, username} = USER_LIST[id - 1];
+          return (
+            <ScrollView contentContainerStyle={styles.root}>
+              <DetailHeader name={name} username={username} />
+              <View style={styles.separator} />
+              <View style={styles.profileContent}>
+                <View style={styles.album}>
+                  <Text size="large">Albums</Text>
+                  <List>
+                    {ALBUMS.map((album, index) => {
+                      let {title} = album;
+                      return (
+                        <AlbumItem
+                          title={title}
+                          photos={PHOTOS.map((photo) => ({
+                            src: photo.url,
+                            thumbnail: photo.thumbnailUrl,
+                          }))}
+                          name={name}
+                        />
+                      );
+                    })}
+                  </List>
+                </View>
+                <View style={styles.post}>
+                  <Text size="large">Posts</Text>
+                  <View style={styles.createNewPost}>
+                    <TextField
+                      label="Add post here"
+                      multiline
+                      rows="4"
+                      placeholder="How are you today?"
+                      style={stylesMUI.txtNewPost}
+                    />
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      style={stylesMUI.btnNewPost}
+                    >
+                      Post
+                    </Button>
+                  </View>
+                  <View style={styles.postList}>
+                    {POSTS.map((post, index) => {
+                      let {title, body} = post;
+                      return (
+                        <PostItem
+                          name={name}
+                          title={title}
+                          content={body}
+                          comments={COMMENTS}
+                          key={index}
+                        />
+                      );
+                    })}
+                  </View>
+                </View>
+              </View>
+            </ScrollView>
+          );
+        }}
+      </Route>
     );
   }
 }
-
 const styles = StyleSheet.create({
   root: {
     paddingHorizontal: 12,
@@ -105,9 +110,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 12,
     marginVertical: 12,
   },
-
   postList: {
     paddingHorizontal: 12,
+  },
+  profileContent: {
+    flexDirection: 'row',
+    paddingVertical: 12,
+  },
+  album: {
+    flex: 2,
   },
 });
 

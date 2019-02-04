@@ -14,12 +14,13 @@ type Props = {|
   phone: string,
   website: string,
   style?: StyleSet,
+  onClick?: () => void,
 |};
 
-export default function UserCard(params: Props) {
-  let {name, username, phone, website, style} = params;
+export default function UserCard(props: Props) {
+  let {name, username, phone, website, style, onClick} = props;
   return (
-    <TouchableOpacity style={[styles.root, style]}>
+    <TouchableOpacity style={[styles.root, style]} onPress={onClick}>
       <View style={styles.container}>
         <Avatar style={stylesMUI.avatar}>{getInitialName(name)}</Avatar>
         <Text
