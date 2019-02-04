@@ -1,7 +1,8 @@
 {
-  "name": "social-media-dashboard",
+  "name": "soc-med-rnw",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://listiani13.github.io/soc-med-rnw",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,7 +12,9 @@
     "lint": "eslint . --max-warnings 0",
     "typecheck": "flow",
     "test-watch": "react-scripts test --env=jsdom --watch --ci --testPathPattern __tests__",
-    "test-src": "react-scripts test --env=jsdom --coverage --testPathPattern __tests__"
+    "test-src": "react-scripts test --env=jsdom --coverage --testPathPattern __tests__",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.1",
@@ -47,8 +50,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-react": "^7.12.4",
     "flow-bin": "^0.75.0",
+    "gh-pages": "^2.0.1",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
-    "react-testing-library": "^5.4.4"
+    "react-testing-library": "^5.4.4",
+    "terser": "^3.14.1"
   }
 }
