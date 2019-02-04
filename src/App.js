@@ -2,6 +2,8 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {ApolloProvider} from 'react-apollo';
+import client from './graphql/clientStore';
 import {WHITE} from './constants/color';
 import MainRoute from './routes/MainRoute';
 
@@ -10,9 +12,11 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <MainRoute />
-      </View>
+      <ApolloProvider client={client}>
+        <View style={styles.container}>
+          <MainRoute />
+        </View>
+      </ApolloProvider>
     );
   }
 }
